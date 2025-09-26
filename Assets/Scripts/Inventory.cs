@@ -7,6 +7,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] GameObject IngredientPrefab;
+    private List<GameObject> presentObjects = new List<GameObject>();
 
     public class InventoryItem
     {
@@ -62,7 +63,16 @@ public class Inventory : MonoBehaviour
             {
                 GameObject ing = Instantiate(IngredientPrefab, new Vector3((i * spacing), (spacing * j), 0), Quaternion.identity);
                 ing.GetComponent<Ingredient>().SetData(it.Ingredient);
+                ing.GetComponent<SpriteRenderer>().sortingOrder = 2;
+                presentObjects.Add(ing);
             }
+        }
+    }
+
+    public void DestroyAllIngredients()
+    {
+        for (int i = presentObjects.Count - 1; i >= 0; i--) {
+            Destroy(presentObjects[i].gameObject);
         }
     }
 }

@@ -4,16 +4,20 @@ using UnityEngine;
 namespace Assets.Scripts{
     public class PickupDropObjects : MonoBehaviour
     {
-        public Inventory inventory;
-
         private bool isPickUpAllowed;
         private GameObject objectToGrab;
+        private Inventory inventory;
 
         void Update () {
             if (isPickUpAllowed && Input.GetKeyDown(KeyCode.E))
             {
                 PickUp();
             }
+        }
+
+        private void Start()
+        {
+            inventory = GetComponent<Inventory>();
         }
 
         void OnTriggerEnter2D(Collider2D collision)
