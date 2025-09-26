@@ -11,7 +11,9 @@ namespace Assets.Scripts{
 
         void Update () {
             if (isPickUpAllowed && Input.GetKeyDown(KeyCode.E))
+            {
                 PickUp();
+            }
         }
 
         void OnTriggerEnter2D(Collider2D collision)
@@ -39,10 +41,8 @@ namespace Assets.Scripts{
             {
                 Debug.Log("Picking allowed for : " + objectToGrab.transform);
                 inventory.InsertItem(objectToGrab.GetComponent<Ingredient>().data);
-                Debug.Log(inventory.InventoryList.Count);
                 Destroy(objectToGrab);
             }
-
         }
     }
 }

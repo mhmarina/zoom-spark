@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts;
 using NUnit.Framework;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField] GameObject IngredientPrefab;
+
     public class InventoryItem
     {
         public IngredientData Ingredient;
@@ -47,5 +50,19 @@ public class Inventory : MonoBehaviour
             }
         }
         return -1;
+    }
+
+    public void InstantiateAllIngredients()
+    {
+        for(int i = 0; i < InventoryList.Count; i++ )
+        {
+            InventoryItem it = InventoryList[i];
+            float spacing = 5f;
+            for(int j = 0; j < it.Count; j++)
+            {
+                GameObject ing = Instantiate(IngredientPrefab, new Vector3((i * spacing), (spacing * j), 0), Quaternion.identity);
+                ing.GetComponent<Ingredient>().SetData(it.Ingredient);
+            }
+        }
     }
 }
