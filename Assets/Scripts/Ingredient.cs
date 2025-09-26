@@ -24,11 +24,12 @@ namespace Assets.Scripts
         public void SetData(IngredientData newData)
         {
             data = newData;
+            this.name = data.ingredientName;
             if (sr == null) sr = GetComponent<SpriteRenderer>();
             sr.sprite = data.sprite;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!isSelected) return;
             Debug.Log("Collided!");
@@ -36,12 +37,12 @@ namespace Assets.Scripts
             // if so check my recipes and see if the other object appears
             // if so destroy both objects and instantiate result
             Ingredient secondIngredient = collision.gameObject.GetComponent<Ingredient>();
-            if(secondIngredient != null)
+            if (secondIngredient != null)
             {
                 // check if second is in this ingredient's list of recipes
-                foreach(RecipeComponent recipe in data.recipes)
+                foreach (RecipeComponent recipe in data.recipes)
                 {
-                    if(recipe.secondIngredient.ingredientName == secondIngredient.data.ingredientName)
+                    if (recipe.secondIngredient.ingredientName == secondIngredient.data.ingredientName)
                     {
                         IngredientData resultRecipe = recipe.result;
                         Vector3 pos = transform.position;
@@ -55,6 +56,7 @@ namespace Assets.Scripts
                     }
                 }
             }
+
         }
     }
 }

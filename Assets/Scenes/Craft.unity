@@ -327,7 +327,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4544315278112568462, guid: 51183db958f387246bb4520e1c64dea2, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 641540897464885643, guid: 51183db958f387246bb4520e1c64dea2, type: 3}
       propertyPath: data
@@ -404,7 +404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4544315278112568462, guid: 51183db958f387246bb4520e1c64dea2, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 641540897464885643, guid: 51183db958f387246bb4520e1c64dea2, type: 3}
       propertyPath: data
