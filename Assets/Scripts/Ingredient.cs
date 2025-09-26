@@ -11,7 +11,7 @@ namespace Assets.Scripts
     public class Ingredient : MonoBehaviour, ISelectable
     {
         public bool isSelected { get; set; }
-        [SerializeField] IngredientData data;
+        [SerializeField] public IngredientData data;
 
         SpriteRenderer sr;
 

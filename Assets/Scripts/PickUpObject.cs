@@ -4,16 +4,11 @@ using UnityEngine;
 namespace Assets.Scripts{
     public class PickupDropObjects : MonoBehaviour
     {
+        public Inventory inventory;
+
         private bool isPickUpAllowed;
         private GameObject objectToGrab;
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-            
-        }
-
-        // Update is called once per frame
         void Update () {
             if (isPickUpAllowed && Input.GetKeyDown(KeyCode.E))
                 PickUp();
@@ -43,6 +38,8 @@ namespace Assets.Scripts{
             if (objectToGrab != null)
             {
                 Debug.Log("Picking allowed for : " + objectToGrab.transform);
+                inventory.InsertItem(objectToGrab.GetComponent<Ingredient>().data);
+                Debug.Log(inventory.InventoryList.Count);
                 Destroy(objectToGrab);
             }
 
