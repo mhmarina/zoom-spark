@@ -23,13 +23,16 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x - mv, transform.position.y);
         }
-        if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if (
+            //isGrounded() &&
+            Input.GetKeyDown(KeyCode.Space))
         {
             // jump
             rb.AddForceY(jumpHeight, ForceMode2D.Impulse);
         }
     }
 
+    // TODO reqork this to use a raycase or collision detection
     private bool isGrounded()
     {
         return rb.linearVelocityY >= 0;
