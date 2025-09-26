@@ -6,18 +6,12 @@ namespace Assets.Scripts{
     {
         private bool isPickUpAllowed;
         private GameObject objectToGrab;
-        private Inventory inventory;
 
         void Update () {
             if (isPickUpAllowed && Input.GetKeyDown(KeyCode.E))
             {
                 PickUp();
             }
-        }
-
-        private void Start()
-        {
-            inventory = GetComponent<Inventory>();
         }
 
         void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +38,7 @@ namespace Assets.Scripts{
             if (objectToGrab != null)
             {
                 Debug.Log("Picking allowed for : " + objectToGrab.transform);
-                inventory.InsertItem(objectToGrab.GetComponent<Ingredient>().data);
+                Inventory.Instance.InsertItem(objectToGrab.GetComponent<Ingredient>().data);
                 Destroy(objectToGrab);
             }
         }

@@ -53,6 +53,13 @@ namespace Assets.Scripts
 
                         Destroy(gameObject);
                         Destroy(collision.gameObject);
+
+                        // update inventory:
+                        Inventory i = Inventory.Instance;
+                        i.InsertItem(resultRecipe);
+                        i.InsertInPresent(resultObj);
+                        i.removeItem(data);
+                        i.removeItem(secondIngredient.data);
                     }
                 }
             }

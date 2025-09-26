@@ -10,12 +10,10 @@ public class PlayerController : MonoBehaviour
     public GameObject GameIngredients;
 
     private Rigidbody2D rb;
-    private Inventory inventory;
 
     private void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        inventory = this.GetComponent<Inventory>(); 
     }
 
     void Update()
@@ -54,12 +52,12 @@ public class PlayerController : MonoBehaviour
     {
         CraftingCanvas.SetActive(true);
         GameIngredients.SetActive(false);
-        inventory.InstantiateAllIngredients();
+        Inventory.Instance.InstantiateAllIngredients();
     }
 
     void UnCraft() {
         CraftingCanvas.SetActive(false);
         GameIngredients.SetActive(true);
-        inventory.DestroyAllIngredients();
+        Inventory.Instance.DestroyAllIngredients();
     }
 }
