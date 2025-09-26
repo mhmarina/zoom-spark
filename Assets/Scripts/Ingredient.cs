@@ -11,6 +11,8 @@ namespace Assets.Scripts
     public class Ingredient : MonoBehaviour, ISelectable
     {
         public bool isSelected { get; set; }
+
+        [SerializeField] public GameObject InteractionUI;
         [SerializeField] public IngredientData data;
 
         SpriteRenderer sr;
@@ -27,6 +29,18 @@ namespace Assets.Scripts
             this.name = data.ingredientName;
             if (sr == null) sr = GetComponent<SpriteRenderer>();
             sr.sprite = data.sprite;
+        }
+
+        public void onPlayerEnter()
+        {
+            Debug.Log("player entered");
+            InteractionUI.SetActive(true);
+        }
+
+        public void onPlayerExit()
+        {
+            Debug.Log("player exited");
+            InteractionUI.SetActive(false);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

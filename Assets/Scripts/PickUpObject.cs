@@ -16,19 +16,23 @@ namespace Assets.Scripts{
 
         void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.GetComponent<Ingredient>() != null)
+            Ingredient ing = collision.gameObject.GetComponent<Ingredient>();
+            if (ing != null)
             {
                 isPickUpAllowed = true;
                 objectToGrab = collision.gameObject;
+                ing.onPlayerEnter();
             }
         }
 
         void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject.GetComponent<Ingredient>() != null)
+            Ingredient ing = collision.gameObject.GetComponent<Ingredient>();
+            if (ing != null)
             {
                 isPickUpAllowed = false;
                 objectToGrab = null;
+                ing.onPlayerExit();
             }
         }
 
