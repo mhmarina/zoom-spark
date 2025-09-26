@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpHeight;
+    public PlayerFeet playerFeet;
 
     private Rigidbody2D rb;
 
@@ -23,18 +24,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x - mv, transform.position.y);
         }
-        if (
-            //isGrounded() &&
+        if (playerFeet.isGrounded &&
             Input.GetKeyDown(KeyCode.Space))
         {
             // jump
             rb.AddForceY(jumpHeight, ForceMode2D.Impulse);
         }
-    }
-
-    // TODO reqork this to use a raycase or collision detection
-    private bool isGrounded()
-    {
-        return rb.linearVelocityY >= 0;
     }
 }
