@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ce2b991b08a3a4889d491b5ebca73a, type: 3}
   m_Name: Yellow
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 7350842817296548427, guid: 7cae0584e4f305c46a488adeda1bda75, type: 3}
   ingredientName: Yellow
   recipes:
   - secondIngredient: {fileID: 11400000, guid: 929247641bbf16d49a83e01eb030cc16, type: 2}

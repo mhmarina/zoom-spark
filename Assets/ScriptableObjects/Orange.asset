@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ce2b991b08a3a4889d491b5ebca73a, type: 3}
   m_Name: Orange
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 7356136983514109112, guid: 3f3f655e0998b064e89afab13f3fe87c, type: 3}
   ingredientName: Orange
   recipes: []
