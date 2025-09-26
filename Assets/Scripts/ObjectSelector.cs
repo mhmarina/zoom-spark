@@ -43,7 +43,7 @@ namespace Assets.Scripts
             // drag
             if(selectedObject != null)
             {
-                selectedObject.transform.position = mousePos2D;
+                selectedObject.GetComponent<Rigidbody2D>().position = mousePos2D;
             }
         }
     }
