@@ -22,19 +22,17 @@ namespace Assets.Scripts
                     if (hit)
                     {
                         GameObject test = hit.collider.gameObject;
-                        Debug.Log(test.name);
                         ISelectable s = test.GetComponent<ISelectable>();
                         if (s != null)
                         {
                             selectedObject = test;
                             s.isSelected = true;
-                            Debug.Log("Selected: " + selectedObject.name);
                         }
                     }
                 }
                 else
                 {
-                    Debug.Log("Deselect");
+                    //Debug.Log("Deselect");
                     selectedObject.GetComponent<ISelectable>().isSelected = false;
                     selectedObject = null;
                 } // deselect

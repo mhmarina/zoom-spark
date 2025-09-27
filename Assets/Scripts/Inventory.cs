@@ -12,24 +12,8 @@ public class Inventory : MonoBehaviour
 
     public static Inventory Instance { get; private set; }
 
-    public class InventoryItem
-    {
-        public string Ingredient;
-        public List<GameObject> gameObjects;
-        public int Count
-        {
-            get
-            {
-                return gameObjects.Count;
-            }
-        }
-
-        public InventoryItem(String ingredientName)
-        {
-            Ingredient = ingredientName;
-            gameObjects = new List<GameObject>();
-        }
-    }
+    [NonSerialized]
+    public Dictionary<string, List<GameObject>> InventoryList = new Dictionary<string, List<GameObject>>();
 
     private void Awake()
     {
@@ -44,82 +28,61 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
-    [NonSerialized]
-    public List<InventoryItem> InventoryList = new List<InventoryItem>();
-
     public void InsertItem(string item, GameObject gameObj, Vector2 pos = new Vector2())
     {
         gameObj.GetComponent<SpriteRenderer>().sortingOrder = 2;
         // find in list
-        int index = FindItem(item);
-        InventoryItem it;
-        if (index == -1)
+        bool found = FindItem(item);
+        if (!found)
         {
-            it = new InventoryItem(item);
-            InventoryList.Add(it);
+            InventoryList.Add(item, new List<GameObject>());
         }
-        else
-        {
-            it = InventoryList[index];
-        }
+
         if (pos == new Vector2())
         {
             pos = new Vector2(displaySpacing, yPlacing);
         }
+
         gameObj.transform.position = pos;
         gameObj.transform.parent = null;
-        it.gameObjects.Add(gameObj);
+        InventoryList[item].Add(gameObj);
     }
 
-    public int FindItem(string item)
+    public bool FindItem(string item)
     {
-        for (int i = 0; i < InventoryList.Count; i++) 
-        {
-            if (InventoryList[i].Ingredient == item)
-            {
-                return i;
-            }
-        }
-        return -1;
+        return InventoryList.ContainsKey(item);
     }
 
     public void removeItem(string item, GameObject obj)
     {
-        int index = FindItem(item);
-        if (index != -1)
+        bool found = FindItem(item);
+        if (found)
         {
-            InventoryList[index].gameObjects.Remove(obj);
-            if (InventoryList[index].Count == 0)
-            {
-                InventoryList.RemoveAt(index);
-            }
+            InventoryList[item].Remove(obj);
         }
     }
 
     public void ShowAllIngredients()
     {
-        for (int i = 0; i < InventoryList.Count; i++)
+        foreach(string key in InventoryList.Keys)
         {
-            InventoryItem it = InventoryList[i];
+            List<GameObject> it = InventoryList[key];
             for (int j = 0; j < it.Count; j++)
             {
-                InventoryList[i].gameObjects[j].SetActive(true);
+                it[j].SetActive(true);
             }
         }
-        toString();
     }
 
     public void HideAllIngredients()
     {
-        for (int i = InventoryList.Count - 1; i >= 0; i--)
+        foreach (string key in InventoryList.Keys)
         {
-            InventoryItem it = InventoryList[i];
+            List<GameObject> it = InventoryList[key];
             for (int j = 0; j < it.Count; j++)
             {
-                InventoryList[i].gameObjects[j].SetActive(false);
+                it[j].SetActive(false);
             }
-            toString();
         }
     }
 
@@ -127,9 +90,11 @@ public class Inventory : MonoBehaviour
     {
         Debug.Log("---------------------------");
         Debug.Log($"There are {InventoryList.Count} unique items in the inventory");
-        for (int i = 0; i < InventoryList.Count; i++)
+
+        foreach (string key in InventoryList.Keys)
         {
-            Debug.Log($"{InventoryList[i].Ingredient}, count: {InventoryList[i].Count}");
+            List<GameObject> it = InventoryList[key];
+            Debug.Log($"{key}, count: {it.Count}");
         }
     }
 }

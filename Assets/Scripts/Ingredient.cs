@@ -33,20 +33,17 @@ namespace Assets.Scripts
 
         public void onPlayerEnter()
         {
-            Debug.Log("player entered");
             InteractionUI.SetActive(true);
         }
 
         public void onPlayerExit()
         {
-            Debug.Log("player exited");
             InteractionUI.SetActive(false);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!isSelected) return;
-            Debug.Log("Collided!");
             // check if I collided with another Ingredient
             // if so check my recipes and see if the other object appears
             // if so destroy both objects and instantiate result

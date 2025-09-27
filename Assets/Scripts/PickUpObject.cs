@@ -38,10 +38,9 @@ namespace Assets.Scripts{
 
         void PickUp()
         {
-            // objectGrabTransform.Grab();
             if (objectToGrab != null)
             {
-                Debug.Log("Picking allowed for : " + objectToGrab.transform);
+                //Debug.Log("Picking allowed for : " + objectToGrab.transform);
                 Inventory.Instance.InsertItem(objectToGrab.GetComponent<Ingredient>().data.ingredientName, objectToGrab);
                 objectToGrab.SetActive(false);
             }
