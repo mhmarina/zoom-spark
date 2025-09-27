@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Assets.Classes;
+using Assets.Scripts.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Ingredient : MonoBehaviour, ISelectable
+    public class Ingredient : MonoBehaviour, ISelectable, IInteractable
     {
         public bool isSelected { get; set; }
 
@@ -39,6 +40,12 @@ namespace Assets.Scripts
         public void onPlayerExit()
         {
             InteractionUI.SetActive(false);
+        }
+
+        public void Interact()
+        {
+            Inventory.Instance.InsertItem(data.ingredientName, gameObject);
+            gameObject.SetActive(false);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -73,7 +80,6 @@ namespace Assets.Scripts
                     }
                 }
             }
-
         }
     }
 }

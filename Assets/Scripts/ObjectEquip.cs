@@ -18,6 +18,19 @@ public class ObjectEquip : MonoBehaviour, IObserver
     }
 
     List<NameSprite> Items = new List<NameSprite>();
+    public static ObjectEquip Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // Destroy duplicate instances
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {

@@ -60,13 +60,19 @@ public class Inventory : MonoBehaviour, IObservable
         return InventoryList.ContainsKey(item);
     }
 
-    public void removeItem(string item, GameObject obj)
+    public void removeItem(string item, GameObject obj = null)
     {
         bool found = FindItem(item);
         List<GameObject> itemList = InventoryList[item];
         if (found)
         {
-            itemList.Remove(obj);
+            if(obj == null)
+            {
+                // just remove the first one
+                itemList.RemoveAt(0);
+            }
+            else { itemList.Remove(obj); }
+
             if (itemList.Count == 0)
             {
                 InventoryList.Remove(item);
