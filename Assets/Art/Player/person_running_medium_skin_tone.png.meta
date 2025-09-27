@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f1055a9f997cc4442b2e212e941b2297
+guid: 4a59b296156b20545aea67abf8279567
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5568440364334968562
-    second: BlueSky_0
+      213: -4527861146506676815
+    second: person_running_medium_skin_tone_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BlueSky_0
+      name: person_running_medium_skin_tone_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1036
+        x: 15
+        y: 39
+        width: 217
+        height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e011ed2ddfce8b2b0800000000000000
-      internalID: -5568440364334968562
+      spriteID: 1b53d22e64ec921c0800000000000000
+      internalID: -4527861146506676815
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      BlueSky_0: -5568440364334968562
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
