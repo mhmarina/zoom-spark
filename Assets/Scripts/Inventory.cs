@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using Assets.Scripts;
+using Assets.Scripts.Interfaces;
 using NUnit.Framework;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory : MonoBehaviour, IObservable
 {
     public float displaySpacing;
     public float yPlacing;
@@ -14,6 +15,9 @@ public class Inventory : MonoBehaviour
 
     [NonSerialized]
     public Dictionary<string, List<GameObject>> InventoryList = new Dictionary<string, List<GameObject>>();
+    private List<IObserver> _observers = new List<IObserver>();
+    public List<IObserver> Observers { get { return _observers; } }
+
 
     private void Awake()
     {
@@ -38,14 +42,17 @@ public class Inventory : MonoBehaviour
             InventoryList.Add(item, new List<GameObject>());
         }
 
-        if (pos == new Vector2())
+        if (pos == Vector2.zero)
         {
-            pos = new Vector2(displaySpacing, yPlacing);
+            int index = InventoryList.Keys.Count;
+            Vector3 screenLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height / 2f, Camera.main.nearClipPlane));
+            pos = new Vector2(screenLeft.x + displaySpacing * index, yPlacing);
         }
 
         gameObj.transform.position = pos;
         gameObj.transform.parent = null;
         InventoryList[item].Add(gameObj);
+        ((IObservable)this).Raise();
     }
 
     public bool FindItem(string item)
@@ -56,10 +63,16 @@ public class Inventory : MonoBehaviour
     public void removeItem(string item, GameObject obj)
     {
         bool found = FindItem(item);
+        List<GameObject> itemList = InventoryList[item];
         if (found)
         {
-            InventoryList[item].Remove(obj);
+            itemList.Remove(obj);
+            if (itemList.Count == 0)
+            {
+                InventoryList.Remove(item);
+            }
         }
+        ((IObservable)this).Raise();
     }
 
     public void ShowAllIngredients()

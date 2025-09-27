@@ -6,9 +6,6 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight;
 
     public PlayerFeet playerFeet;
-    public GameObject CraftingCanvas;
-    public GameObject GameIngredients;
-
     private Rigidbody2D rb;
 
     private void Start()
@@ -33,31 +30,5 @@ public class PlayerController : MonoBehaviour
             // jump
             rb.AddForceY(jumpHeight, ForceMode2D.Impulse);
         }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (CraftingCanvas.activeInHierarchy)
-            {
-                // pull down
-                UnCraft();
-            }
-            else
-            {
-                // pull up
-                Craft();
-            }
-        }
-    }
-
-    void Craft()
-    {
-        CraftingCanvas.SetActive(true);
-        GameIngredients.SetActive(false);
-        Inventory.Instance.ShowAllIngredients();
-    }
-
-    void UnCraft() {
-        CraftingCanvas.SetActive(false);
-        GameIngredients.SetActive(true);
-        Inventory.Instance.HideAllIngredients();
     }
 }
