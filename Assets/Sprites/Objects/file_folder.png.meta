@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ab1106f2e63b2f44e8e9082649313f7a
+guid: 2d7bc3234b92d1c46b2ac54882b6f3df
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5775521142449408263
-    second: red_heart_black_0
+      213: -7668126479896651558
+    second: file_folder_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +54,7 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 2
+  alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: red_heart_black_0
+      name: file_folder_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
+        x: 13
+        y: 13
+        width: 230
+        height: 214
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 709847801e5c62050800000000000000
-      internalID: 5775521142449408263
+      spriteID: ad85ef01897559590800000000000000
+      internalID: -7668126479896651558
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      red_heart_black_0: 5775521142449408263
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

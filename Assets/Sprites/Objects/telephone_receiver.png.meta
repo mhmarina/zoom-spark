@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 184efe2e1c0a85c45bbdb7d6d5f47135
+guid: 6938022e418dde64096a5c7d18315e4f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6172144476955695399
-    second: unicorn_black_0
+      213: 2014646109812689589
+    second: telephone_receiver_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +54,7 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 2
+  alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: unicorn_black_0
+      name: telephone_receiver_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
+        x: 14
+        y: 13
+        width: 229
+        height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 729555b43bcd7a550800000000000000
-      internalID: 6172144476955695399
+      spriteID: 5ba028b76f575fb10800000000000000
+      internalID: 2014646109812689589
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      unicorn_black_0: 6172144476955695399
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
