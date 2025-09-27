@@ -1017,7 +1017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83169ae3a80207e4d8ae9108b8248abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IngredientPrefab: {fileID: 7996074477294308155, guid: 51183db958f387246bb4520e1c64dea2, type: 3}
+  displaySpacing: 5
+  yPlacing: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -70,10 +70,9 @@ namespace Assets.Scripts
 
                         // update inventory:
                         Inventory i = Inventory.Instance;
-                        i.InsertItem(resultRecipe);
-                        i.InsertInPresent(resultObj);
-                        i.removeItem(data);
-                        i.removeItem(secondIngredient.data);
+                        i.removeItem(data.ingredientName, gameObject);
+                        i.removeItem(secondIngredient.data.ingredientName, secondIngredient.gameObject);
+                        i.InsertItem(resultRecipe.ingredientName, resultObj, pos);
                     }
                 }
             }

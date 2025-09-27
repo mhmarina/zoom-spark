@@ -7,9 +7,29 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] GameObject IngredientPrefab;
-    private List<GameObject> presentObjects = new List<GameObject>();
-    public static Inventory Instance { get; private set; } 
+    public float displaySpacing;
+    public float yPlacing;
+
+    public static Inventory Instance { get; private set; }
+
+    public class InventoryItem
+    {
+        public string Ingredient;
+        public List<GameObject> gameObjects;
+        public int Count
+        {
+            get
+            {
+                return gameObjects.Count;
+            }
+        }
+
+        public InventoryItem(String ingredientName)
+        {
+            Ingredient = ingredientName;
+            gameObjects = new List<GameObject>();
+        }
+    }
 
     private void Awake()
     {
@@ -25,42 +45,38 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public class InventoryItem
-    {
-        public IngredientData Ingredient;
-        public int Count;
-
-        public InventoryItem(IngredientData id, int c)
-        {
-            Ingredient = id;
-            Count = c;
-        }
-    }
-
     [NonSerialized]
     public List<InventoryItem> InventoryList = new List<InventoryItem>();
 
-    public void InsertItem(IngredientData item)
+    public void InsertItem(string item, GameObject gameObj, Vector2 pos = new Vector2())
     {
+        gameObj.GetComponent<SpriteRenderer>().sortingOrder = 2;
         // find in list
         int index = FindItem(item);
+        InventoryItem it;
         if (index == -1)
         {
-            // create new object
-            InventoryItem it = new InventoryItem(item, 1);
+            it = new InventoryItem(item);
             InventoryList.Add(it);
         }
         else
         {
-            InventoryList[index].Count++;
+            it = InventoryList[index];
         }
+        if (pos == new Vector2())
+        {
+            pos = new Vector2(displaySpacing, yPlacing);
+        }
+        gameObj.transform.position = pos;
+        gameObj.transform.parent = null;
+        it.gameObjects.Add(gameObj);
     }
 
-    public int FindItem(IngredientData item)
+    public int FindItem(string item)
     {
         for (int i = 0; i < InventoryList.Count; i++) 
         {
-            if (InventoryList[i].Ingredient.ingredientName == item.ingredientName)
+            if (InventoryList[i].Ingredient == item)
             {
                 return i;
             }
@@ -68,12 +84,12 @@ public class Inventory : MonoBehaviour
         return -1;
     }
 
-    public void removeItem(IngredientData item)
+    public void removeItem(string item, GameObject obj)
     {
         int index = FindItem(item);
         if (index != -1)
         {
-            InventoryList[index].Count--;
+            InventoryList[index].gameObjects.Remove(obj);
             if (InventoryList[index].Count == 0)
             {
                 InventoryList.RemoveAt(index);
@@ -81,31 +97,29 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void InstantiateAllIngredients()
+    public void ShowAllIngredients()
     {
-        for(int i = 0; i < InventoryList.Count; i++ )
+        for (int i = 0; i < InventoryList.Count; i++)
         {
             InventoryItem it = InventoryList[i];
-            float spacing = 5f;
-            for(int j = 0; j < it.Count; j++)
+            for (int j = 0; j < it.Count; j++)
             {
-                GameObject ing = Instantiate(IngredientPrefab, new Vector3((i * spacing), (spacing * j), 0), Quaternion.identity);
-                ing.GetComponent<Ingredient>().SetData(it.Ingredient);
-                ing.GetComponent<SpriteRenderer>().sortingOrder = 2;
-                InsertInPresent(ing);
+                InventoryList[i].gameObjects[j].SetActive(true);
             }
         }
+        toString();
     }
 
-    public void InsertInPresent(GameObject ing)
+    public void HideAllIngredients()
     {
-        presentObjects.Add(ing);
-    }
-
-    public void DestroyAllIngredients()
-    {
-        for (int i = presentObjects.Count - 1; i >= 0; i--) {
-            Destroy(presentObjects[i].gameObject);
+        for (int i = InventoryList.Count - 1; i >= 0; i--)
+        {
+            InventoryItem it = InventoryList[i];
+            for (int j = 0; j < it.Count; j++)
+            {
+                InventoryList[i].gameObjects[j].SetActive(false);
+            }
+            toString();
         }
     }
 
@@ -115,7 +129,7 @@ public class Inventory : MonoBehaviour
         Debug.Log($"There are {InventoryList.Count} unique items in the inventory");
         for (int i = 0; i < InventoryList.Count; i++)
         {
-            Debug.Log($"{InventoryList[i].Ingredient.ingredientName}, count: {InventoryList[i].Count}");
+            Debug.Log($"{InventoryList[i].Ingredient}, count: {InventoryList[i].Count}");
         }
     }
 }

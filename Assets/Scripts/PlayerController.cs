@@ -52,12 +52,12 @@ public class PlayerController : MonoBehaviour
     {
         CraftingCanvas.SetActive(true);
         GameIngredients.SetActive(false);
-        Inventory.Instance.InstantiateAllIngredients();
+        Inventory.Instance.ShowAllIngredients();
     }
 
     void UnCraft() {
         CraftingCanvas.SetActive(false);
         GameIngredients.SetActive(true);
-        Inventory.Instance.DestroyAllIngredients();
+        Inventory.Instance.HideAllIngredients();
     }
 }

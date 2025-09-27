@@ -42,8 +42,8 @@ namespace Assets.Scripts{
             if (objectToGrab != null)
             {
                 Debug.Log("Picking allowed for : " + objectToGrab.transform);
-                Inventory.Instance.InsertItem(objectToGrab.GetComponent<Ingredient>().data);
-                Destroy(objectToGrab);
+                Inventory.Instance.InsertItem(objectToGrab.GetComponent<Ingredient>().data.ingredientName, objectToGrab);
+                objectToGrab.SetActive(false);
             }
         }
     }
