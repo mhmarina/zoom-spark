@@ -4,8 +4,9 @@ namespace Assets.Scripts
 {
     public class ObjectSelector : MonoBehaviour
     {
-        private GameObject selectedObject;
+        [SerializeField] private Texture2D interactCursor;
 
+        private GameObject selectedObject;
         private Vector3 mousePos;
         private Vector2 mousePos2D;
         void Update()
@@ -13,7 +14,19 @@ namespace Assets.Scripts
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
-            if (Input.GetMouseButtonDown(0)) // Left mouse button click
+            // Hover detection
+            RaycastHit2D hoverHit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            if (hoverHit && hoverHit.collider.GetComponent<ISelectable>() != null)
+            {
+                Cursor.SetCursor(interactCursor, Vector2.zero, CursorMode.Auto);
+            }
+            else
+            {
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto); 
+            }
+
+            // Left mouse button click
+            if (Input.GetMouseButtonDown(0)) 
             {
                 if(selectedObject == null)
                 {
