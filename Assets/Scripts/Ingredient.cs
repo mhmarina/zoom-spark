@@ -78,6 +78,10 @@ namespace Assets.Scripts
                         i.removeItem(secondIngredient.data.ingredientName, secondIngredient.gameObject);
                         i.InsertItem(resultRecipe.ingredientName, resultObj, pos);
                     }
+                    else
+                    {
+                        Debug.Log("INVALID COMBO!");
+                    }
                 }
             }
         }
