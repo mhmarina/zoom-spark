@@ -9,6 +9,12 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
+    public void loadSceneByName(string name)
+    {
+        // Load first scene
+        SceneManager.LoadScene(name);
+    }
+
     public void onLevelMap()
     {
         // Load level map if we ever make it
