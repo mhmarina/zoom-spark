@@ -69,10 +69,11 @@ namespace Assets.Scripts.Managers
         private void SnapCamera()
         {
             // Find some position
-            if (Inventory.Instance.InventoryList.Keys.Count == 0) return;
+            int count = Inventory.Instance.InventoryList.Keys.Count;
+            if (count == 0) return;
             else
             {
-                string key = Inventory.Instance.InventoryList.Keys.First();
+                string key = Inventory.Instance.InventoryList.Keys.ToList()[(int)Math.Floor((double)count/2)];
                 Vector2 pos = Inventory.Instance.InventoryList[key][0].transform.position;
                 Camera.main.transform.position = new Vector3(pos.x, pos.y, Camera.main.transform.position.z);
             }
