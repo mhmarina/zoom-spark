@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      white_exclamation_mark_0: -6862849009667485096
+      white_exclamation_mark_1: -6509329202863500915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

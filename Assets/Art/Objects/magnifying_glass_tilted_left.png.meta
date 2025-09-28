@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      magnifying_glass_tilted_left_0: 3081763546560452181
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

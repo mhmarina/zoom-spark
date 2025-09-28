@@ -285,7 +285,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      magic_wand_0: -2544986322184467447
+      magic_wand_1: -7196139642968906666
+      magic_wand_2: -8168372993016795715
+      magic_wand_3: 5907421397920148209
+      magic_wand_4: -1199874157854418470
+      magic_wand_5: -1612088381185264226
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

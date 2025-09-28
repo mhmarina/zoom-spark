@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      person_walking_medium_skin_tone_0: 88026478666761555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
