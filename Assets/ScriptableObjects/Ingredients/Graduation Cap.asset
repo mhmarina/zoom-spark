@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37ce2b991b08a3a4889d491b5ebca73a, type: 3}
-  m_Name: JWT Secret
+  m_Name: Graduation Cap
   m_EditorClassIdentifier: 
-  sprite: {fileID: 1926472038317066082, guid: be921bf63ff4c1245aab2bbbda852046, type: 3}
-  ingredientName: JWT Secret
+  sprite: {fileID: 1979616484570741756, guid: 1ade58595b8c7474eb4141ea3fa74762, type: 3}
+  ingredientName: Graduation Cap
   recipes:
-  - secondIngredient: {fileID: 11400000, guid: 93bcb5b5adb40274c9209597f73d1227, type: 2}
-    result: {fileID: 11400000, guid: 829b3b1006a968f4289b2d148372ed67, type: 2}
+  - secondIngredient: {fileID: 11400000, guid: a7ca33078395329459d84c3da38d542f, type: 2}
+    result: {fileID: 11400000, guid: 23135b412da924848a60a7dddb330323, type: 2}

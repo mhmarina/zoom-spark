@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 799044674623150031, guid: 833020df3affb5747838c7302419c8ac, type: 3}
   ingredientName: Authenticated Key
-  recipes: []
+  recipes:
+  - secondIngredient: {fileID: 11400000, guid: 5a04b9871c155884abd644f225469aa2, type: 2}
+    result: {fileID: 11400000, guid: 829b3b1006a968f4289b2d148372ed67, type: 2}

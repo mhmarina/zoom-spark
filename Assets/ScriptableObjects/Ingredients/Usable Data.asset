@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37ce2b991b08a3a4889d491b5ebca73a, type: 3}
-  m_Name: JWT Secret
+  m_Name: Usable Data
   m_EditorClassIdentifier: 
-  sprite: {fileID: 1926472038317066082, guid: be921bf63ff4c1245aab2bbbda852046, type: 3}
-  ingredientName: JWT Secret
-  recipes:
-  - secondIngredient: {fileID: 11400000, guid: 93bcb5b5adb40274c9209597f73d1227, type: 2}
-    result: {fileID: 11400000, guid: 829b3b1006a968f4289b2d148372ed67, type: 2}
+  sprite: {fileID: -4215743321374488260, guid: 0483fc6f082c6f043959e3e2d6b7928e, type: 3}
+  ingredientName: Usable Data
+  recipes: []

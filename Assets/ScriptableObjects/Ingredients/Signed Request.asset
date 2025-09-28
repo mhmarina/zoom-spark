@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ce2b991b08a3a4889d491b5ebca73a, type: 3}
   m_Name: Signed Request
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  ingredientName: 
-  recipes: []
+  sprite: {fileID: -2000515681166492602, guid: 1c422860b1c22304daaf3446be7438e2, type: 3}
+  ingredientName: Signed Request
+  recipes:
+  - secondIngredient: {fileID: 11400000, guid: f73a09f3250df804d82aa8af736f8bbe, type: 2}
+    result: {fileID: 11400000, guid: 50cb77c633de0c34885f3b5ab887122a, type: 2}

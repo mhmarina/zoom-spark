@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ce2b991b08a3a4889d491b5ebca73a, type: 3}
+  m_Name: Woman
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 9164424297577601048, guid: e295ad87d86250b40ab0f093f1e248cc, type: 3}
+  ingredientName: Woman
+  recipes:
+  - secondIngredient: {fileID: 11400000, guid: 5e1fe1a2a620db44cb4dd53afc6075b0, type: 2}
+    result: {fileID: 11400000, guid: 23135b412da924848a60a7dddb330323, type: 2}
+  - secondIngredient: {fileID: 11400000, guid: e469654852a90ed4e8d1d6f404535d06, type: 2}
+    result: {fileID: 11400000, guid: 6bbc7581585ac9044b1cfcc90bfbcc8b, type: 2}
