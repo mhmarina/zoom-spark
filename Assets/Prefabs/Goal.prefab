@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4380639215431036021}
   - component: {fileID: 3397489855176339459}
   - component: {fileID: 6177543638225722751}
+  - component: {fileID: 1318246342616692236}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -178,6 +179,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1318246342616692236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852152335529356366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfe6a25457592e42baaf5b79d6f83f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: Orange
+  InteractionUI: {fileID: 3080640829541260340}
 --- !u!1 &3080640829541260340
 GameObject:
   m_ObjectHideFlags: 0
