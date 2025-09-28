@@ -94,6 +94,7 @@ namespace Assets.Scripts.Managers
 
         public void GoToMainMenu()
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene(0);
         }
 

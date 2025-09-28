@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      woman_tipping_hand_0: 9164424297577601048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

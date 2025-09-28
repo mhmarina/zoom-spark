@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zoom Error_0: -283501465082427648
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

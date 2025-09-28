@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37.306, y: 76.44299}
+  m_AnchoredPosition: {x: 37.306, y: 100.44303}
   m_SizeDelta: {x: 777.575, y: -59.834}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8131155497532769982
@@ -65,9 +65,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Access keys and tokens are distinct credentials used to secure and authorize
-    access to resources, typically in APIs. An API key identifies the calling application
-    or project, providing fixed, unchanging permissions for accessing app capabilities.
+  m_text: "An SDK takes a signed request and handles the technical details of turning
+    it into a proper API call to the server. When the server replies, the raw response
+    is usually just structured data (like JSON). Through response parsing, the SDK
+    converts that raw data into clear, usable objects\u2014such as a user profile
+    or other information your app can work with directly."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -311,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3092701527626164365, guid: 01326d66b688b0840ba9a330dbf4c42a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 82
+      value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 3836212189446312899, guid: 01326d66b688b0840ba9a330dbf4c42a, type: 3}
       propertyPath: m_text
