@@ -59,10 +59,23 @@ namespace Assets.Scripts.Managers
 
         void Craft()
         {
+            SnapCamera();
             CraftingCanvas.SetActive(true);
             GameIngredients.SetActive(false);
             Player.SetActive(false);
             Inventory.Instance.ShowAllIngredients();
+        }
+
+        private void SnapCamera()
+        {
+            // Find some position
+            if (Inventory.Instance.InventoryList.Keys.Count == 0) return;
+            else
+            {
+                string key = Inventory.Instance.InventoryList.Keys.First();
+                Vector2 pos = Inventory.Instance.InventoryList[key][0].transform.position;
+                Camera.main.transform.position = new Vector3(pos.x, pos.y, Camera.main.transform.position.z);
+            }
         }
 
         void UnCraft()
