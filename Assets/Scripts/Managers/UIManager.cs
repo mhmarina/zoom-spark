@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Assets.Scripts.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Managers
 {
-    public class UIManager : MonoBehaviour
+    public class UIManager : MonoBehaviour, IObserver
     {
         public GameObject CraftingCanvas;
         public GameObject GameIngredients;
@@ -29,6 +30,12 @@ namespace Assets.Scripts.Managers
                 }
             }
         }
+
+        private void Start()
+        {
+            ((IObservable)LivesManager.Instance).RegisterObserver(this);
+        }
+
         void Craft()
         {
             CraftingCanvas.SetActive(true);
@@ -43,6 +50,17 @@ namespace Assets.Scripts.Managers
             GameIngredients.SetActive(true);
             Player.SetActive(true);
             Inventory.Instance.HideAllIngredients();
+        }
+
+        public void OnEventRaised()
+        {
+            // this is where I will update the HUD
+            UpdateHUD();
+        }
+
+        public void UpdateHUD()
+        {
+            Debug.Log($"Number of lives left: {LivesManager.Instance.numLives}");
         }
     }
 }

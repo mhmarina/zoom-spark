@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Assets.Classes;
 using Assets.Scripts.Interfaces;
+using Assets.Scripts.Managers;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -57,6 +58,10 @@ namespace Assets.Scripts
             Ingredient secondIngredient = collision.gameObject.GetComponent<Ingredient>();
             if (secondIngredient != null)
             {
+                if(data.recipes.Count == 0)
+                {
+                    LivesManager.Instance.IncrementLives(-1);
+                }
                 // check if second is in this ingredient's list of recipes
                 foreach (RecipeComponent recipe in data.recipes)
                 {
@@ -80,7 +85,7 @@ namespace Assets.Scripts
                     }
                     else
                     {
-                        Debug.Log("INVALID COMBO!");
+                        LivesManager.Instance.IncrementLives(-1);
                     }
                 }
             }

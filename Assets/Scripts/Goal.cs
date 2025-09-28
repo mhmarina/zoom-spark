@@ -1,4 +1,5 @@
 using Assets.Scripts.Interfaces;
+using Assets.Scripts.Managers;
 using UnityEngine;
 using static ObjectEquip;
 
@@ -41,6 +42,6 @@ public class Goal : MonoBehaviour, IInteractable
 
     public void onGoalFailed()
     {
-        Debug.Log("Goal Failed :(");
+        LivesManager.Instance.IncrementLives(-1);
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ce2b991b08a3a4889d491b5ebca73a, type: 3}
   m_Name: Red
   m_EditorClassIdentifier: 
-  sprite: {fileID: -3856332081952268265, guid: 97ac613f1431a2f4b8fd593dffdbf3c3, type: 3}
+  sprite: {fileID: -5361130300258963840, guid: d89482a2b5354a442b27daa47143de48, type: 3}
   ingredientName: Red
   recipes:
   - secondIngredient: {fileID: 11400000, guid: d640fa03c68054945bd1f5d582f19993, type: 2}
