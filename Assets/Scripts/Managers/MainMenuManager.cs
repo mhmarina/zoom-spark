@@ -3,6 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public void loadSceneByName(string name)
+    {
+        // Load first scene
+        SceneManager.LoadScene(name);
+    }
+
     public void onNewGame()
     {
         // Load first scene
