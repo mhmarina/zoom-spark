@@ -24,6 +24,7 @@ public class Goal : MonoBehaviour, IInteractable
         if (ns == null) return;
 
         string currName = ns.name;
+        Debug.Log($"{currName}, {target}");
         if (currName == target)
         {
             onGoalAchieved();

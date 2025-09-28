@@ -193,9 +193,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1610440106347929279, guid: 46c13b0f3074bc641b6386a0268feb3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 441
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610440106347929279, guid: 46c13b0f3074bc641b6386a0268feb3b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 204
+      objectReference: {fileID: 0}
     - target: {fileID: 2850931937880832998, guid: 46c13b0f3074bc641b6386a0268feb3b, type: 3}
       propertyPath: m_Name
       value: Crafting Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850931937880832998, guid: 46c13b0f3074bc641b6386a0268feb3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4214957098524588356, guid: 46c13b0f3074bc641b6386a0268feb3b, type: 3}
       propertyPath: m_Camera
@@ -1518,7 +1530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4380639215431036021, guid: a9626ea910809994db123295298bcca6, type: 3}
       propertyPath: target
-      value: Fake Token
+      value: Signed Request
       objectReference: {fileID: 0}
     - target: {fileID: 6320603790294783463, guid: a9626ea910809994db123295298bcca6, type: 3}
       propertyPath: m_LocalScale.x
@@ -1588,7 +1600,8 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4380639215431036021, guid: a9626ea910809994db123295298bcca6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2162,6 +2175,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -5568440364334968562, guid: f1055a9f997cc4442b2e212e941b2297, type: 3}
+    - target: {fileID: 6791557544383682288, guid: 6b278329ac77eb7438a3ac3a58e97860, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25
+      objectReference: {fileID: 0}
     - target: {fileID: 8036034768166394525, guid: 6b278329ac77eb7438a3ac3a58e97860, type: 3}
       propertyPath: m_text
       value: 'Score: 2
