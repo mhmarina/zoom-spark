@@ -30,10 +30,12 @@ namespace Assets.Scripts.Managers
 
         public void IncrementLives(int num)
         {
+            if(numLives == 0) { return; }
             numLives += num;
-            if(numLives < 0)
+            if(numLives <= 0)
             {
-                numLives = 0; 
+                numLives = 0;
+                OnZeroLives();
             }
             ((IObservable)this).Raise();
         }
@@ -42,6 +44,11 @@ namespace Assets.Scripts.Managers
         {
             numLives = num;
             ((IObservable)this).Raise();
+        }
+
+        public void OnZeroLives()
+        {
+            Debug.Log("GAME OVER!!!");
         }
     }
 }
