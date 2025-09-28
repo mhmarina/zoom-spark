@@ -117,7 +117,7 @@ Transform:
   m_GameObject: {fileID: 1964381209811994672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.401, y: 0, z: 0}
+  m_LocalPosition: {x: -0.40100017, y: -0, z: 0}
   m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -203,13 +203,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2310456049690903568}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.931, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1043233814226518963}
-  m_Father: {fileID: 3559967182311394542}
+  m_Children: []
+  m_Father: {fileID: 5792411152817910240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2293161457038971761
 SpriteRenderer:
@@ -312,6 +311,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displaySpacing: 0
   yPlacing: 0
+--- !u!1 &4124162252212917230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5792411152817910240}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5792411152817910240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4124162252212917230}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1043233814226518963}
+  - {fileID: 4270002844921439316}
+  m_Father: {fileID: 3559967182311394542}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5368043634906189662
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +380,7 @@ Transform:
   m_Children:
   - {fileID: 121865693774592959}
   - {fileID: 7685091748111115568}
-  - {fileID: 4270002844921439316}
+  - {fileID: 5792411152817910240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4831354186202400648
@@ -467,8 +499,6 @@ MonoBehaviour:
   moveSpeed: 7
   jumpHeight: 10
   playerFeet: {fileID: 3445905715295971067}
-  CraftingCanvas: {fileID: 0}
-  GameIngredients: {fileID: 0}
 --- !u!50 &8282358909485439763
 Rigidbody2D:
   serializedVersion: 5
@@ -533,13 +563,13 @@ Transform:
   m_GameObject: {fileID: 8184881734117928047}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.009000063, y: -0.032999992, z: 0}
+  m_LocalPosition: {x: -0.009000063, y: 0.898, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3485992948292302710}
   - {fileID: 6111083563573943063}
-  m_Father: {fileID: 4270002844921439316}
+  m_Father: {fileID: 5792411152817910240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8273778827115375689
 GameObject:
@@ -567,7 +597,7 @@ Transform:
   m_GameObject: {fileID: 8273778827115375689}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.418, y: -0, z: 0}
+  m_LocalPosition: {x: 0.418, y: 0, z: 0}
   m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -616,7 +646,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

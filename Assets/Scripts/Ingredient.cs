@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Assets.Classes;
 using Assets.Scripts.Interfaces;
 using Assets.Scripts.Managers;
+using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -15,6 +16,7 @@ namespace Assets.Scripts
         public bool isSelected { get; set; }
 
         [SerializeField] public GameObject InteractionUI;
+        [SerializeField] public TextMeshProUGUI Name;
         [SerializeField] public IngredientData data;
 
         SpriteRenderer sr;
@@ -23,6 +25,7 @@ namespace Assets.Scripts
         {
             // populate data
             SetData(data);
+            Name.text = data.ingredientName;
         }
 
         public void SetData(IngredientData newData)
