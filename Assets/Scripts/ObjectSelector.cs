@@ -9,6 +9,11 @@ namespace Assets.Scripts
         private GameObject selectedObject;
         private Vector3 mousePos;
         private Vector2 mousePos2D;
+
+        private void OnDisable()
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
         void Update()
         {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
