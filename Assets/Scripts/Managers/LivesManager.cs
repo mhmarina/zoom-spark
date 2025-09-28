@@ -48,7 +48,7 @@ namespace Assets.Scripts.Managers
 
         public void OnZeroLives()
         {
-            Debug.Log("GAME OVER!!!");
+            UIManager.Instance.LossScreen();
         }
     }
 }

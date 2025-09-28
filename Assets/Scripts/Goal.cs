@@ -37,7 +37,7 @@ public class Goal : MonoBehaviour, IInteractable
     public void onGoalAchieved()
     {
         Inventory.Instance.removeItem(ObjectEquip.Instance.CurrentlySelected.name);
-        Debug.Log("Goal cleared!");
+        UIManager.Instance.WinScreen();
     }
 
     public void onGoalFailed()

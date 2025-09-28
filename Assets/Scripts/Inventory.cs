@@ -5,6 +5,7 @@ using Assets.Scripts;
 using Assets.Scripts.Interfaces;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour, IObservable
 {
@@ -18,7 +19,6 @@ public class Inventory : MonoBehaviour, IObservable
     private List<IObserver> _observers = new List<IObserver>();
     public List<IObserver> Observers { get { return _observers; } }
 
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -28,7 +28,6 @@ public class Inventory : MonoBehaviour, IObservable
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Optional: Persist across scenes
         }
     }
 
