@@ -1573,6 +1573,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 6381275727812988448, guid: a797c4f0143829e42826e1cad9c07eae, type: 3}
+      propertyPath: m_text
+      value: An API key alone only identifies the application, while a token proves
+        the user or session is valid. When combined, they form an authenticated key,
+        which tells the server both who is making the request and that the request
+        is authorized, allowing secure access to protected resources.
+      objectReference: {fileID: 0}
     - target: {fileID: 8535822251886524681, guid: a797c4f0143829e42826e1cad9c07eae, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.32025793

@@ -1684,6 +1684,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1578662473}
     - target: {fileID: 1088515755054217146, guid: a797c4f0143829e42826e1cad9c07eae, type: 3}
+      propertyPath: LevelIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088515755054217146, guid: a797c4f0143829e42826e1cad9c07eae, type: 3}
       propertyPath: CraftingCanvas
       value: 
       objectReference: {fileID: 222641913}

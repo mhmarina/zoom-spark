@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a43bbf0ec03944f996374827caee8a, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  locked: 1
+  completed: 0
+  info: "Authenticated keys are the root credentials that establish trust between
+    a client and a server. From these, the server can generate JWT tokens, which
+    act like time-limited passes proving the client\u2019s identity. When the client
+    makes an API call, it sends a signed request that includes the JWT (or a signature
+    derived from the key), allowing the server to verify both who is calling and
+    that the request hasn\u2019t been tampered with. "

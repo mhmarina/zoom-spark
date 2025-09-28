@@ -18,6 +18,7 @@ namespace Assets.Scripts.Managers
         public GameObject WinCanvas;
         public GameObject PauseScreen;
         public static UIManager Instance;
+        public int LevelIndex;
 
         private bool isPaused = false;
 
@@ -101,6 +102,8 @@ namespace Assets.Scripts.Managers
         public void WinScreen()
         {
             WinCanvas.SetActive(true);
+            LevelsManager.Instance.CompleteLevel(LevelIndex);
+            LevelsManager.Instance.UnlockLevel(LevelIndex + 1);
         }
 
         public void RestartLevel()

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a43bbf0ec03944f996374827caee8a, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  locked: 0
+  completed: 0
+  info: An API key alone only identifies the application, while a token proves the
+    user or session is valid. When combined, they form an authenticated key, which
+    tells the server both who is making the request and that the request is authorized,
+    allowing secure access to protected resources.
